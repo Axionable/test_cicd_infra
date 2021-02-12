@@ -2,8 +2,7 @@ version: 0.2
 phases:
   build:
     commands:
-      - "echo Running test git on `date`"
-      - "echo Building the Docker image..."
-  post_build:
-    commands:
-      - "echo Test 2 on `date`"
+      - "echo Creating a zip for lambda function"
+      - "cd src/"
+      - "zip '../data/hello_world.zip' hello_world.py"
+      - "aws s3 cp '../data/hello_world.zip' 's3://m6-deploy-bucket/'"
