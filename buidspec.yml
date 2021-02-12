@@ -4,5 +4,5 @@ phases:
     commands:
       - "echo Creating a zip for lambda function"
       - "cd src/"
-      - "zip '../data/hello_world.zip' hello_world.py"
-      - "aws s3 cp '../data/hello_world.zip' 's3://m6-deploy-bucket/'"
+      - "zip 'hello_world.zip' hello_world.py"
+      - "aws s3 cp 'hello_world.zip' 's3://m6-deploy-bucket/'"
