@@ -6,4 +6,4 @@ phases:
       - "echo Building the Docker image..."
   post_build:
     commands:
-      - "Test 2 on `date`"
+      - "echo Test 2 on `date`"
