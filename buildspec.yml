@@ -1,0 +1,23 @@
+phases:
+  build:
+    commands:
+      - "echo Creating a zip for lambda function"
+      - "cd src/"
+      - "zip 'hello_world.zip' hello_world.py"
+      - "aws s3 cp 'hello_world.zip' 's3://m6-deploy-bucket/'"
+
+version: 0.2
+phases:
+ install:
+  runtime-versions:
+   python: 3.7
+ build:
+  commands:
+   - sam build
+   - export BUCKET=m6-deploy-bucket
+   - sam package --s3-bucket $BUCKET --output-template-file outputtemplate.yml
+artifacts:
+ type: zip
+ files:
+  - samTemplate.yml
+  - outputtemplate.yml

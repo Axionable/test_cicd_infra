@@ -1,8 +1,0 @@
-version: 0.2
-phases:
-  build:
-    commands:
-      - "echo Creating a zip for lambda function"
-      - "cd src/"
-      - "zip 'hello_world.zip' hello_world.py"
-      - "aws s3 cp 'hello_world.zip' 's3://m6-deploy-bucket/'"
