@@ -11,5 +11,5 @@ phases:
 artifacts:
  type: zip
  files:
-  - samTemplate.yml
+  - template.yml
   - outputtemplate.yml
